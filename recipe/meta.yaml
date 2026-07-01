@@ -1,18 +1,19 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "flexparser" %}
+{% set version = "0.4" %}
+{% set sha256 = "266d98905595be2ccc5da964fe0a2c3526fbbffdc45b65b3146d75db992ef6b2" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  sha256: {{ sha256 }}
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
+  skip: True  # [py<311]
 
 requirements:
   host:
@@ -20,26 +21,30 @@ requirements:
     - pip
   run:
     - python
+    - typing_extensions
 
 test:
   imports:
-    - {{ name.replace('-', '.') }}
+    - {{ name }}
   requires:
     - pip
+    - python
   commands:
     - pip check
 
 about:
-  home: <PLEASE ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
-  description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
+  home: https://github.com/hgrecco/flexparser
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: Parsing made fun ... using typing.
+  description: Parsing made fun ... using typing.
+  dev_url: https://github.com/hgrecco/flexparser
+  doc_url: https://github.com/hgrecco/flexparser?tab=readme-ov-file
 
 extra:
+  anaconda-services:
+    ref:
+      - https://anaconda.zendesk.com/agent/tickets/109074
   recipe-maintainers:
-    - Jrice1317
+    - amaloney
