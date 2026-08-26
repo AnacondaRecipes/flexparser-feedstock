@@ -1,24 +1,13 @@
-# About flexparser-feedstock
+# flexparser-feedstock
 
-Feedstock license: [BSD-3-Clause](https://github.com/AnacondaRecipes/flexparser-feedstock/blob/main/LICENSE)
+- Home: [github.com/hgrecco/flexparser](https://github.com/hgrecco/flexparser)
+- License: [BSD-3-Clause](https://github.com/hgrecco/flexparser/blob/main/LICENSE)
+- Feedstock license: [BSD-3-Clause](LICENSE)
 
-Home: [https://github.com/hgrecco/flexparser](https://github.com/hgrecco/flexparser)
+A typed parsing library built on Python type hints and dataclasses.
 
-Package license: BSD-3-Clause
-
-Summary: Parsing made fun ... using typing.
-
-# Installing flexparser
-
-Installing `flexparser` from the `services` channel can be achieved by:
+## Installing flexparser
 
 ```
 conda install services::flexparser
 ```
-
-It is possible to list all of the versions of `flexparser` available on your platform with `conda`:
-
-```
-conda search services::flexparser
-```
-
