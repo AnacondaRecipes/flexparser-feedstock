@@ -39,6 +39,11 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: Parsing made fun using typing
+  description: |
+    flexparser is a Python parsing library that leverages type hints for intuitive and fun
+    parsing of structured text formats. It provides a declarative approach to building parsers.
+  dev_url: https://github.com/hgrecco/flexparser
+  doc_url: https://github.com/hgrecco/flexparser
 
 extra:
   anaconda-services:
