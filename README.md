@@ -1,33 +1,12 @@
-About <pkg_name>-feedstock
-=======================
+# flexparser-feedstock
 
-Feedstock license: [BSD-3-Clause](LICENSE)
+- **Home**: [github.com/hgrecco/flexparser](https://github.com/hgrecco/flexparser)
+- **Package icense**: [BSD-3-Clause](https://github.com/hgrecco/flexparser/blob/main/LICENSE)
+- **Feedstock license**: [BSD-3-Clause](LICENSE)
+- **Summary**: A typed parsing library built on Python type hints and dataclasses.
 
-Home: <home_url>
+## Installing flexparser
 
-Package license: <pkg_license>
-
-Summary: <pkg_summary>
-
-
-Current release info
-====================
-
-| Name | Downloads | Version | Platforms |
-| --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-<pkg_name>-green.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) |
-
-Installing <pkg_name>
-==================
-
-Installing `<pkg_name>` from the main channel can be achieved by:
-
-```
-conda install <pkg_name>
-```
-
-It is possible to list all of the versions of `<pkg_name>` available on your platform with `conda`:
-
-```
-conda search <pkg_name>
+```bash
+conda install services::flexparser
 ```

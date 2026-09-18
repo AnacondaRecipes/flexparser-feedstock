@@ -1,45 +1,55 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "flexparser" %}
+{% set version = "0.4" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flexparser-{{ version }}.tar.gz
+  sha256: 266d98905595be2ccc5da964fe0a2c3526fbbffdc45b65b3146d75db992ef6b2
 
 build:
-  number: 0
+  number: 1
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
+  script_env:
+    - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
 
 requirements:
   host:
     - python
     - pip
+    - setuptools >=61
+    - setuptools-scm
+    - wheel
   run:
     - python
+    - typing-extensions
 
 test:
-  imports:
-    - {{ name.replace('-', '.') }}
   requires:
     - pip
+  imports:
+    - flexparser
   commands:
     - pip check
 
 about:
-  home: <PLEASE ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
+  home: https://github.com/hgrecco/flexparser
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: Parsing made fun ... using typing.
   description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
+    flexparser is a Python parsing library that leverages type hints for intuitive and fun
+    parsing of structured text formats. It provides a declarative approach to building parsers.
+  dev_url: https://github.com/hgrecco/flexparser
+  doc_url: https://github.com/hgrecco/flexparser/blob/main/README.md
 
 extra:
+  anaconda-services:
+    ref:
+      - https://anaconda.zendesk.com/agent/tickets/109074
   recipe-maintainers:
-    - Jrice1317
+    - anaconda-services
