@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<310]
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -19,11 +19,11 @@ requirements:
     - python
     - pip
     - setuptools >=61
-    - setuptools-scm >=3.4.3
+    - setuptools-scm
     - wheel
   run:
     - python
-    - typing_extensions
+    - typing-extensions
 
 test:
   requires:
@@ -38,16 +38,16 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: Parsing made fun using typing
+  summary: Parsing made fun ... using typing.
   description: |
     flexparser is a Python parsing library that leverages type hints for intuitive and fun
     parsing of structured text formats. It provides a declarative approach to building parsers.
   dev_url: https://github.com/hgrecco/flexparser
-  doc_url: https://github.com/hgrecco/flexparser
+  doc_url: https://github.com/hgrecco/flexparser/blob/main/README.md
 
 extra:
   anaconda-services:
     ref:
       - https://anaconda.zendesk.com/agent/tickets/109074
   recipe-maintainers:
-    - amaloney
+    - anaconda-services
